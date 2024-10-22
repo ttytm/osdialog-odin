@@ -1,0 +1,3 @@
+[submodule "osdialog"]
+	path = thirdparty/osdialog
+	url = https://github.com/ttytm/osdialog.git

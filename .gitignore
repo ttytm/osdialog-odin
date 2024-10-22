@@ -1,0 +1,26 @@
+# Binaries by extension
+*.exe
+*.exe~
+*.a
+*.so
+*.o
+*.obj
+*.dll
+*.so
+*.so.*
+*.dylib
+*.bin
+
+# All sub-level bare binaries
+*/*
+!*/*.*
+!**/
+
+# Common editor/system specific metadata
+.DS_Store
+.idea/
+.vscode/
+*.iml
+
+# Private files
+.env
