@@ -4,8 +4,7 @@ import "core:c"
 import "core:strings"
 
 when ODIN_OS == .Windows {
-	@(extra_linker_flags = "-lcomdlg32")
-	foreign import osdialog {"osdialog.o", "osdialog_win.o"}
+	foreign import osdialog {"osdialog.obj", "osdialog_win.obj", "system:comdlg32.lib", "system:user32.lib", "system:shell32.lib"}
 } else when ODIN_OS == .Darwin {
 	@(extra_linker_flags = "-framework AppKit")
 	foreign import osdialog {"osdialog.o", "osdialog_mac.o"}
