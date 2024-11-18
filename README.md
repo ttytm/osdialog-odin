@@ -36,7 +36,7 @@ Cross-platform utility library for Odin to open native dialogs for the filesyste
   </tr>
 </table>
 
-<details open>
+<details>
 <summary><b>More Examples</b> <sub><sup>Toggle visibility...</sup></sub></summary><br>
 
 <table align="center">
@@ -72,10 +72,18 @@ Cross-platform utility library for Odin to open native dialogs for the filesyste
 
 ## Installation
 
-```sh
-# <projects-path>/your-awesome-odin-project
-git submodule add https://github.com/ttytm/osdialog-odin.git osdialog
-```
+1. Add it as a submodule in your Odin git project
+
+   ```sh
+   # <projects-path>/your-awesome-odin-project
+   git submodule add https://github.com/ttytm/osdialog-odin.git osdialog
+   ```
+
+2. Prepare the C Binding
+
+   ```sh
+   cd osdialog && make && cd -
+   ```
 
 ## Usage
 
@@ -127,16 +135,17 @@ main :: proc() {
 
 For a simple local example: [`osdialog-odin/examples/main.odin`](https://github.com/ttytm/osdialog-odin/blob/main/examples/main.odin)
 
+One-shot copy pasta to perform a lightweight, filtered, yet complete development clone and build the C binding target.
+
 ```sh
-# Perform a lightweight, filtered, yet complete clone
 git clone --recursive --shallow-submodules --filter=blob:none \
-  https://github.com/ttytm/osdialog-odin && \
-cd osdialog-odin/examples
+  https://github.com/ttytm/osdialog-odin \
+  && cd osdialog-odin && make
 ```
 
 ```sh
 # osdialog-odin/examples
-osdialog run main.odin -file
+odin run examples/main.odin -file
 ```
 
 ## Credits
