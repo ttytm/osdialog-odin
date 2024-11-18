@@ -81,8 +81,18 @@ Cross-platform utility library for Odin to open native dialogs for the filesyste
 
 2. Prepare the C Binding
 
+   Unix-like
+
    ```sh
    cd osdialog && make && cd -
+   ```
+
+   Windows
+
+   ```sh
+   cd osdialog
+   nmake
+   cd ..
    ```
 
 ## Usage
@@ -135,16 +145,30 @@ main :: proc() {
 
 For a simple local example: [`osdialog-odin/examples/main.odin`](https://github.com/ttytm/osdialog-odin/blob/main/examples/main.odin)
 
-One-shot copy pasta to perform a lightweight, filtered, yet complete development clone and build the C binding target.
+One-shot copy pasta to perform a lighter, filtered development clone and build the C binding target.
+
+Unix-like
 
 ```sh
-git clone --recursive --shallow-submodules --filter=blob:none \
+git clone --recursive --filter=blob:none --also-filter-submodules \
   https://github.com/ttytm/osdialog-odin \
   && cd osdialog-odin && make
 ```
 
+<details><summary>Windows</summary>
+
 ```sh
-# osdialog-odin/examples
+git clone --recursive --filter=blob:none --also-filter-submodules https://github.com/ttytm/osdialog-odin
+```
+
+```sh
+cd osdialog-odin
+nmake
+```
+
+</details>
+
+```sh
 odin run examples/main.odin -file
 ```
 
