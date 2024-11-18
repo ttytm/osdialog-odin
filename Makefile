@@ -1,7 +1,9 @@
-OSDIALOG := thirdparty/osdialog
+MODULE_ROOT := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+OSDIALOG := $(MODULE_ROOT)/thirdparty/osdialog
 CFLAGS = -g -Wall -Wextra -std=c99 -pedantic
 SOURCES+= $(OSDIALOG)/osdialog.c
 
+# TODO: specify output locations to allow `make -f osdialog/Makefile` from foreign directories.
 ifeq ($(OS),Windows_NT)
 	LDFLAGS += -lcomdlg32
 	SOURCES += $(OSDIALOG)/osdialog_win.c
@@ -16,4 +18,7 @@ else
 endif
 
 all:
-	$(CC) $(CFLAGS) -c $(SOURCES) $(LDFLAGS)
+	@echo "Preparing osdialog C binding." \
+	&& git submodule update --init --recursive \
+	&& $(CC) $(CFLAGS) -c $(SOURCES) $(LDFLAGS) \
+	&& echo "Done."
