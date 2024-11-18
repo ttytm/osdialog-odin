@@ -12,9 +12,9 @@
 *.bin
 
 # All sub-level bare binaries
-*/*
-!*/*.*
-!**/
+*/**/*
+!*/**/*/
+!*/**/*.*
 
 # Common editor/system specific metadata
 .DS_Store
