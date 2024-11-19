@@ -105,7 +105,7 @@ message :: proc(message: string, level: MessageLevel = .Info, buttons: MessageBu
 
 // Opens an input prompt with an "OK" and "Cancel" button.
 // Returns the entered text and `true`, or `false` if the dialog was cancelled.
-// `text` is the default string to fill the input box.
+// `text` optionally sets initial content of the input box.
 prompt :: proc(message: string, text: string = "", level: MessageLevel = .Info) -> (string, bool) #optional_ok
 
 // Opens a file dialog and returns the selected path and `true` or `false` if the selection was canceled.
