@@ -72,7 +72,7 @@ Cross-platform utility library for Odin to open native dialogs for the filesyste
 
 ## Installation
 
-1. Add it as a submodule in your Odin git project
+1. Add it as a submodule to your Odin Git project
 
    ```sh
    # <projects-path>/your-awesome-odin-project
@@ -145,9 +145,9 @@ main :: proc() {
 
 For a simple local example: [`osdialog-odin/examples/main.odin`](https://github.com/ttytm/osdialog-odin/blob/main/examples/main.odin)
 
-One-shot copy pasta to perform a lighter, filtered development clone and build the C binding target.
-
 Unix-like
+
+One-shot copy pasta to perform a lighter, filtered development clone and build the C binding target.
 
 ```sh
 git clone --recursive --filter=blob:none --also-filter-submodules \
