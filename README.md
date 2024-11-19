@@ -100,12 +100,20 @@ Cross-platform utility library for Odin to open native dialogs for the filesyste
 Ref.: [`osdialog-odin/osdialog.odin`](https://github.com/ttytm/osdialog-odin/blob/main/osdialog.odin)
 
 ```odin
+// Opens a message box and returns `true` if `OK` or `Yes` was pressed.
 message :: proc(message: string, level: MessageLevel = .Info, buttons: MessageButtons = .Ok) -> bool
 
+// Opens an input prompt with an "OK" and "Cancel" button.
+// Returns the entered text and `true`, or `false` if the dialog was cancelled.
+// `text` is the default string to fill the input box.
 prompt :: proc(message: string, text: string = "", level: MessageLevel = .Info) -> (string, bool) #optional_ok
 
+// Opens a file dialog and returns the selected path and `true` or `false` if the selection was canceled.
 path :: proc(action: PathAction, path: string = "", filename: string = "") -> (string, bool) #optional_ok
 
+// Opens an RGBA color picker and returns the selected `Color` and `true`, or `false` if the selection was canceled.
+// Optionally, it takes a `color` and `opacity` argument. `color` sets the dialogs initial color. `opacity` can be
+// set to `false` to disable the opacity slider on unix-like systems. It has no effect on Windows.
 color :: proc(color: Color = {255, 255, 255, 255}, opacity: bool = true) -> (Color, bool) #optional_ok
 ```
 
