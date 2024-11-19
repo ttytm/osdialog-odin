@@ -143,7 +143,7 @@ main :: proc() {
 }
 ```
 
-For a simple local example: [`osdialog-odin/examples/main.odin`](https://github.com/ttytm/osdialog-odin/blob/main/examples/main.odin)
+For a simple local run:
 
 Unix-like
 
@@ -155,7 +155,7 @@ git clone --recursive --filter=blob:none --also-filter-submodules \
   && cd osdialog-odin && make
 ```
 
-<details><summary>Windows</summary>
+Windows
 
 ```sh
 git clone --recursive --filter=blob:none --also-filter-submodules https://github.com/ttytm/osdialog-odin
@@ -166,7 +166,7 @@ cd osdialog-odin
 nmake
 ```
 
-</details>
+Run the example
 
 ```sh
 odin run examples/main.odin -file
