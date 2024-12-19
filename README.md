@@ -100,12 +100,11 @@ Cross-platform utility library for Odin to open native dialogs for the filesyste
 Ref.: [`osdialog-odin/osdialog.odin`](https://github.com/ttytm/osdialog-odin/blob/main/osdialog.odin)
 
 ```odin
-// Opens a message box and returns `true` if `OK` or `Yes` was pressed.
+// Opens a message box and returns `true` if "OK" or "Yes" was pressed.
 message :: proc(message: string, level: MessageLevel = .Info, buttons: MessageButtons = .Ok) -> bool
 
-// Opens an input prompt with an "OK" and "Cancel" button.
-// Returns the entered text and `true`, or `false` if the dialog was cancelled.
-// `text` optionally sets initial content of the input box.
+// Opens an input prompt with an "OK" and "Cancel" button and returns the entered text and `true`,
+// or `false` if the dialog was cancelled. `text` optionally sets the initial content of the input box.
 prompt :: proc(message: string, text: string = "", level: MessageLevel = .Info) -> (string, bool) #optional_ok
 
 // Opens a file dialog and returns the selected path and `true` or `false` if the selection was canceled.
